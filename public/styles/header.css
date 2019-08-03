@@ -1,0 +1,24 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+    border-bottom: 1px solid grey;
+}
+
+nav a {
+    margin: 1% 5%;
+}

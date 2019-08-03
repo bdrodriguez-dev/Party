@@ -1,0 +1,153 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/public/styles/newCharacter.css">
+<script type="text/javascript" src="/public/scripts/newCharacter.js"></script>
+
+<h1>Party</h1>
+
+<form id="createCharacter" action="/characters" method="POST">
+    <div class="characterBackground">
+        <div class="form-box">
+            <label for="input-character-name">Character Name</label>
+            <input type="text" id="input-character-name" name="characterName" required>
+        </div>
+        <div class="form-box">
+            <label for="input-player-name">Player Name</label>
+            <input type="text" id="input-player-name" name="playerName" required>
+        </div>
+        <h3>What does your character look like?</h3>
+        <div class="age-gender-height-weight">
+            <div class="form-box">
+                <label for="input-age">Age</label>
+                <input type="text" id="input-age" name="age">
+            </div>
+            <div class="form-box">
+                <label for="input-gender">Gender</label>
+                <input type="text" id="input-gender" name="gender">
+            </div>
+            <div class="form-box">
+                <label for="input-height">Height</label>
+                <input type="text" id="input-height" name="height">
+            </div>
+            <div class="form-box">
+                <label for="input-weight">Weight</label>
+                <input type="text" id="input-weight" name="weight">
+            </div>
+        </div>
+        <div class="hair-eye-skin">
+            <div class="form-box">
+                <label for="input-hair-color">Hair Color</label>
+                <input type="text" id="input-hair-color" name="hair-color">
+            </div>
+            <div class="form-box">
+                <label for="input-hair-style">Hair Style</label>
+                <input type="text" id="input-hair-style" name="hair-style">
+            </div>
+            <div class="form-box">
+                <label for="input-eye-color">Eye Color</label>
+                <input type="text" id="input-eye-color" name="eye-color">
+            </div>
+            <div class="form-box">
+                <label for="input-skin-color">Skin Color</label>
+                <input type="text" id="input-skin-color" name="skin-color">
+            </div>
+        </div>
+        <div class="form-box">
+            <label for="input-reference-image">Reference Image (url)</label>
+            <input type="text" id="input-reference-image" name="reference-image">
+        </div>
+        <h3>How does your character behave and treat others?</h3>
+        <div class="form-box">
+            <label for="input-alignment">Alignment</label>
+            <input type="text" id="input-alignment" name="alignment">
+        </div>
+    </div>
+    <hr>
+    <h3>Humans are the most common people in the worlds of D&D, but they live and work alongside dwarves, elves, halflings, and countless other fantastic species. Your character belongs to one of these peoples. To which race does your character belong?</h3>
+    <div class="characterRace">
+        <div class="form-box">
+            <label for="input-race">Race</label>
+            <select id="input-race" name="race" required>
+                <option hidden> </option>
+                <% races.forEach(function(raceName) { %>
+                    <option value="<%= raceName %>">
+                        <%= raceName %>
+                    </option>
+                <% }) %>
+            </select>
+            <label for="input-sub-race">Sub-Race</label>
+            <input type="text" id="input-sub-race" name="subRace">
+        </div>
+    </div>
+    
+    <h3>How does your character navigate their world?</h3>
+    <div class="characterClass" id="charClass">
+        <input type="number" name="numClasses" id="numClasses" value="1" hidden> <!--For JS purposes-->
+        <div class="form-box" id="charClass-0">
+            <!--Class Selection-->
+            <label for="input-charClass">Class</label>
+            <select id="input-charClass" name="charClass_0" required>
+                <option hidden></option>
+                <% classes.forEach(function(charClass) { %>
+                    <option value="<%= charClass %>"><%= charClass %></option>
+                <% }) %>
+            </select>
+            <!--SubClass Selection-->
+            <label for="input-subClass">Sub-Class</label>
+            <input id="input-subClass" name="subClass_0" type="text">
+            <!--Level Selection-->
+            <label for="input-level">Level</label>
+            <input id="input-level" name="level_0" type="number"  min="1" max="20" value="1" required>
+        </div>
+        <!--Multiclass Buttons-->
+        <div class="form-box" style="display: none;">
+            <button id="button-add-multiclass">+</button>
+            <p>Use these buttons if you want to multiclass your character</p>
+            <button id="button-remove-multiclass">-</button>
+        </div>
+    </div>
+    <hr>
+    <h3>Placeholder: Description on how to roll for scores. Cleric disabled ethereal ethereal plane extraplanar good subtype granted power healing domain outer plane planning domain portal domain reflex save retribution domain slime domain space tremorsense.</h3>
+    <div class="ability-scores">
+        <div>
+            <label for="ability-score-str">Str</label>
+            <input type="number" id="ability-score-str" name="str" min="1" max="20" value="10" required>
+        </div>
+        <div>
+            <label for="ability-score-dex">Dex</label>
+            <input type="number" id="ability-score-dex" name="dex" min="1" max="20" value="10" required>
+        </div>
+        <div>
+            <label for="ability-score-con">Con</label>
+            <input type="number" id="ability-score-con" name="con" min="1" max="20" value="10" required>
+        </div>
+        <div>
+            <label for="ability-score-int">Int</label>
+            <input type="number" id="ability-score-int" name="int" min="1" max="20" value="10" required>
+        </div>
+        <div>
+            <label for="ability-score-wis">Wis</label>
+            <input type="number" id="ability-score-wis" name="wis" min="1" max="20" value="10" required>
+        </div>
+        <div>
+            <label for="ability-score-cha">Cha</label>
+            <input type="number" id="ability-score-cha" name="cha" min="1" max="20" value="10" required>
+        </div>
+    </div>
+
+
+    <!--Submit/Reset Buttons-->
+    <div class="buttons">
+        <button id="button-submit">
+            Create
+        </button>
+        <button id="button-reset">
+            Reset
+        </button>
+    </div>
+</form>
+
+
+
+
+<% include ../partials/footer %>
+

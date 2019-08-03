@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+    width: 15%;
+    border: solid red 2px;
+}
+
+.characterSelection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.playableChar {
+    display: flex;
+    flex-direction: column;
+}

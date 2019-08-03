@@ -1,0 +1,193 @@
+<% include ../partials/header %>
+<link rel="stylesheet" href="/public/styles/details.css">
+
+<div class="details-container">
+    <div class="character-basic">
+        <h3><%= character.charName %></h3>
+        <p>
+            <!--If character has a subRace, use that instead-->
+            <%= character.charRace %>
+        </p>
+        <p>
+            Level <%= character.charClass[0].classLevel %> <%= character.charClass[0].charClass %>
+        </p>
+        <div class="pic-stats">
+            <img src="https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=611&q=80" alt="placeholder">
+            <ul>
+                <li>Str: <%= character.abilityScores.str.score %></li>
+                <li>Dex: <%= character.abilityScores.dex.score %></li>
+                <li>Con: <%= character.abilityScores.con.score %></li>
+                <li>Int: <%= character.abilityScores.int.score %></li>
+                <li>Wis: <%= character.abilityScores.wis.score %></li>
+                <li>Cha: <%= character.abilityScores.cha.score %></li>
+            </ul>
+        </div>
+        <p>HP: 20/20</p>
+    </div>
+    
+    <div class="character-tabs">
+        <div class="tab-detail">
+            <!--This is where the components will go-->
+            <div class="component-abscore">
+                    <div class="abscore-str">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>STR</p>
+                        <p class="stat-value"><%= character.abilityScores.str.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.str.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.str.mod %></span>
+                        </p>
+                    </div>
+                    <div class="abscore-dex">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>DEX</p>
+                        <p class="stat-value"><%= character.abilityScores.dex.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.dex.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.dex.mod %></span>
+                        </p>
+                    </div>
+                    <div class="abscore-con">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>CON</p>
+                        <p class="stat-value"><%= character.abilityScores.con.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.con.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.con.mod %></span>
+                        </p>
+                    </div>
+                    <div class="abscore-int">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>INT</p>
+                        <p class="stat-value"><%= character.abilityScores.int.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.int.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.int.mod %></span>
+                        </p>
+                    </div>
+                    <div class="abscore-wis">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>WIS</p>
+                        <p class="stat-value"><%= character.abilityScores.wis.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.wis.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.wis.mod %></span>
+                        </p>
+                    </div>
+                    <div class="abscore-cha">
+                        <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                        <p>CHA</p>
+                        <p class="stat-value"><%= character.abilityScores.cha.score %></p>
+                        <p>Mod</p>
+                        <p class="stat-modifier">
+                            <% if(character.abilityScores.cha.mod > 0) { %>
+                                <span>+</span>
+                            <% } %>
+                            <span><%= character.abilityScores.cha.mod %></span>
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <nav>
+            <a href="">Summary</a> <!-- Customizable-->
+            <a href="">Combat</a>
+            <a href="">Features</a> <!-- Includes feats-->
+            <a href="">Equipment</a>
+            <a href="">Skills</a>
+            <a href="">Spells</a>
+        </nav>
+        <div class="tab-components" style="display: none;">
+            <div class="component-abscore">
+                <div class="abscore-str">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>STR</p>
+                    <p class="stat-value"><%= character.abilityScores.str.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.str.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.str.mod %></span>
+                    </p>
+                </div>
+                <div class="abscore-dex">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>DEX</p>
+                    <p class="stat-value"><%= character.abilityScores.dex.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.dex.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.dex.mod %></span>
+                    </p>
+                </div>
+                <div class="abscore-con">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>CON</p>
+                    <p class="stat-value"><%= character.abilityScores.con.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.con.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.con.mod %></span>
+                    </p>
+                </div>
+                <div class="abscore-int">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>INT</p>
+                    <p class="stat-value"><%= character.abilityScores.int.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.int.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.int.mod %></span>
+                    </p>
+                </div>
+                <div class="abscore-wis">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>WIS</p>
+                    <p class="stat-value"><%= character.abilityScores.wis.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.wis.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.wis.mod %></span>
+                    </p>
+                </div>
+                <div class="abscore-cha">
+                    <img class="icon" src="./../../images/icons/hoodie.svg" alt="">
+                    <p>CHA</p>
+                    <p class="stat-value"><%= character.abilityScores.cha.score %></p>
+                    <p>Mod</p>
+                    <p class="stat-modifier">
+                        <% if(character.abilityScores.cha.mod > 0) { %>
+                            <span>+</span>
+                        <% } %>
+                        <span><%= character.abilityScores.cha.mod %></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

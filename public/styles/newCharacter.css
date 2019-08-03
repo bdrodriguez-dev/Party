@@ -1,0 +1,85 @@
+body {
+    /* background-color: #122c34; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 75%;
+    height: 100%;
+    /* background-color: #122c34; */
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h1, h2 {
+    text-align: center;
+    color: black;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    width: 15%;
+    margin: 0 1% 5% 1%;
+    padding: 7px;
+}
+
+[type=submit] {
+    background-color: green;
+    border: none;
+}
+
+.form-box {
+    margin: 1% 1%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.ability-scores {
+    margin: 5%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ability-scores div {
+    width: 10%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+input, select {
+    /* flex-grow: .5; */
+    padding: 7px;
+}
+
+label {
+    padding: 7px;
+    background-color: #4ea5d9;
+}
+
+.tempBorder {
+    border: 2px solid seagreen;
+}
+
+.age-gender-height-weight, .hair-eye-skin {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,22 @@
+export const CHARACTER_ADVANCEMENT_TABLE = {
+    "1": {exp: 0, profBonus: 2},
+    "2": {exp: 300, profBonus: 2},
+    "3": {exp: 900, profBonus: 2},
+    "4": {exp: 2700, profBonus: 2},
+    "5": {exp: 6500, profBonus: 3},
+    "6": {exp: 14000, profBonus: 3},
+    "7": {exp: 23000, profBonus: 3},
+    "8": {exp: 34000, profBonus: 3},
+    "9": {exp: 48000, profBonus: 4},
+    "10": {exp: 64000, profBonus: 4},
+    "11": {exp: 85000, profBonus: 4},
+    "12": {exp: 100000, profBonus: 4},
+    "13": {exp: 120000, profBonus: 5},
+    "14": {exp: 140000, profBonus: 5},
+    "15": {exp: 165000, profBonus: 5},
+    "16": {exp: 195000, profBonus: 5},
+    "17": {exp: 225000, profBonus: 6},
+    "18": {exp: 265000, profBonus: 6},
+    "19": {exp: 305000, profBonus: 6},
+    "20": {exp: 355000, profBonus: 6}
+};

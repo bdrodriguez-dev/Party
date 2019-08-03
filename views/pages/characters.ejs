@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+<link rel="stylesheet" href="/public/styles/characters.css">
+
+<h1>This is where the characters will be listed.</h1>
+<div class="characterSelection">
+    <% characters.forEach(function(character) { %>
+        <a href="/characters/<%= character._id %>" class="playableChar">
+            <h3><%= character.charName %></h3>
+            <p>
+                <!--If character has a subRace, use that instead-->
+                <%= character.charRace %>
+            </p>
+            <p>
+                Level <%= character.charClass[0].classLevel %> <%= character.charClass[0].charClass %>
+            </p>
+        </a>
+        <a href="/characters/<%= character._id %>/edit">Edit</a>
+    <% }) %>
+</div>
+
+<% include ../partials/footer %>

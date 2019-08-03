@@ -1,0 +1,63 @@
+.details-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0% 1%;
+}
+
+.character-basic {
+    border: red dashed 1px;
+    width: 30%;
+}
+
+.character-tabs {
+    border: red dashed 1px;
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.character-tabs .tab-detail {
+    height: 90%;
+    border: blue dashed 1px;
+}
+.character-tabs nav {
+    height: 10%;
+    border: blue dashed 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.character-tabs nav a {
+    border: blue dashed 1px;
+
+}
+
+.pic-stats {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    width: 60%;
+    border: .5px solid black;
+}
+
+.tab-components {
+    border: 1px dashed indigo;
+}
+
+.component-abscore {
+    border: 1px dashed indigo;
+    display: flex;
+    flex-direction: row;
+}
+
+.component-abscore div {
+    border: 1px dashed indigo;
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    padding: 0 1%;
+}
