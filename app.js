@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/public", express.static('./public/'));
 app.set('view engine', 'ejs');
 
-//Database Stuff
+//Database Stuffz
 mongoose.connect('mongodb://localhost:27017/party', {useNewUrlParser: true});
 
 const characterSchema = new mongoose.Schema({
